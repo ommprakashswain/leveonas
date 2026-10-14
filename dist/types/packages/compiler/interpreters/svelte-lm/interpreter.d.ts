@@ -1,0 +1,32 @@
+import { SvelteProgramNode } from './ast';
+import { SvelteLMDiagnostic, SvelteLMInterpreterOptions } from './types';
+export declare class SvelteLMInterpreter {
+    private program;
+    private currentLoc;
+    private diagnostics;
+    private options;
+    private buffer;
+    private inString;
+    private stringQuote;
+    private inLineComment;
+    private inBlockComment;
+    private escapeNext;
+    constructor(options?: SvelteLMInterpreterOptions);
+    static parse(source: string, options?: SvelteLMInterpreterOptions): SvelteProgramNode;
+    reset(): void;
+    getAST(): SvelteProgramNode;
+    getDiagnostics(): SvelteLMDiagnostic[];
+    hasErrors(): boolean;
+    isSafeToExpose(): boolean;
+    write(chunk: string): this;
+    end(): SvelteProgramNode;
+    private advanceLocation;
+    private consumeChar;
+    private checkBufferForConstructs;
+    private flushBuffer;
+    private parseTokens;
+    private parseProgramAST;
+    private extractMatchingParen;
+    private parseComponentBody;
+    private parsePropsAndChildren;
+}

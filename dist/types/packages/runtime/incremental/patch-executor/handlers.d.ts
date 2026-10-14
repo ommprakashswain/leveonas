@@ -1,0 +1,13 @@
+import { OperationHandler } from './types';
+import { ASTNode } from '../../../compiler/ast/nodes';
+export declare function materializeASTNode(payload: any, parent?: ASTNode | null): ASTNode;
+export declare const handleInsertNode: OperationHandler;
+export declare const handleRemoveNode: OperationHandler;
+export declare const handleMoveNode: OperationHandler;
+export declare const handleReplaceNode: OperationHandler;
+export declare const handleUpdateText: OperationHandler;
+export declare const handleUpdateProperty: OperationHandler;
+export declare const handleRemoveProperty: OperationHandler;
+export declare const handleAddProperty: OperationHandler;
+export declare const handleReplaceChildren: OperationHandler;
+export declare const handleNoOp: OperationHandler;

@@ -1,0 +1,88 @@
+{
+  "name": "leveonas",
+  "version": "0.5.1",
+  "description": "Token-optimized streaming IR and runtime compiler for generative AI user interfaces",
+  "license": "MIT",
+  "author": "Omm Prakash Swain <ommprakashswain117@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ommprakashswain/leveonas.git"
+  },
+  "homepage": "https://github.com/ommprakashswain/leveonas#readme",
+  "bugs": {
+    "url": "https://github.com/ommprakashswain/leveonas/issues"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "tokens",
+    "token-optimization",
+    "compiler",
+    "streaming",
+    "ast",
+    "react",
+    "vue",
+    "svelte",
+    "angular",
+    "dsl",
+    "leveonas"
+  ],
+  "files": [
+    "dist",
+    "public",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "leveonas": "./dist/bin/leveonas.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime.d.ts",
+      "import": "./dist/runtime.mjs",
+      "require": "./dist/runtime.js"
+    },
+    "./sdk": {
+      "types": "./dist/sdk.d.ts",
+      "import": "./dist/sdk.mjs",
+      "require": "./dist/sdk.js"
+    },
+    "./compiler": {
+      "types": "./dist/compiler.d.ts",
+      "import": "./dist/compiler.mjs",
+      "require": "./dist/compiler.js"
+    },
+    "./lsp": {
+      "types": "./dist/lsp.d.ts",
+      "import": "./dist/lsp.mjs",
+      "require": "./dist/lsp.js"
+    },
+    "./security": {
+      "types": "./dist/security.d.ts",
+      "import": "./dist/security.mjs",
+      "require": "./dist/security.js"
+    }
+  },
+  "scripts": {
+    "build:bundles": "esbuild packages/runtime/browser.ts --bundle --format=iife --global-name=LeveonasRuntimeBundle --outfile=public/leveonas-runtime.js && esbuild packages/client/engine.ts --bundle --format=iife --outfile=public/leveonas.js",
+    "build:dist": "npx tsx scripts/build-dist.ts",
+    "build": "npm run build:bundles && npm run build:dist",
+    "test": "npx tsx --test packages/**/*.test.ts",
+    "bundle-size": "npx tsx scripts/bundle-size.ts",
+    "validate:release": "npx tsx scripts/release-check.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.3"
+  }
+}

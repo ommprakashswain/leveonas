@@ -1,0 +1,38 @@
+(di cs:"min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans"
+  (na cs:"w-full border-b border-slate-800 px-6 py-4 flex items-center justify-between bg-slate-950"
+    (he cs:"text-xl font-bold text-white tracking-tight" "Storefront")
+    (sp cs:"text-sm text-indigo-400 font-semibold cursor-pointer" "Cart (2)")
+  )
+  (di cs:"flex-1 max-w-6xl mx-auto p-8 space-y-6 w-full"
+    (he cs:"text-3xl font-bold text-white tracking-tight" "Featured Hardware")
+    (di cs:"grid grid-cols-1 md:grid-cols-3 gap-6"
+      (ca cs:"bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-slate-700 transition-colors"
+        (di cs:"h-40 bg-slate-800 rounded-xl flex items-center justify-center text-slate-500 font-semibold" "Hardware Accelerator")
+        (he cs:"text-lg font-bold text-white" "Leveonas Stream Core")
+        (pa cs:"text-sm text-slate-400" "Sub-millisecond dedicated patch reconciler unit.")
+        (di cs:"flex items-center justify-between pt-2"
+          (sp cs:"text-xl font-extrabold text-white" "$499")
+          (bu cs:"px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium text-sm transition-colors" "Add to Cart")
+        )
+      )
+      (ca cs:"bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-slate-700 transition-colors"
+        (di cs:"h-40 bg-slate-800 rounded-xl flex items-center justify-center text-slate-500 font-semibold" "Edge Node")
+        (he cs:"text-lg font-bold text-white" "Micro Iframe Router")
+        (pa cs:"text-sm text-slate-400" "Zero-overhead sandboxed execution runtime.")
+        (di cs:"flex items-center justify-between pt-2"
+          (sp cs:"text-xl font-extrabold text-white" "$299")
+          (bu cs:"px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium text-sm transition-colors" "Add to Cart")
+        )
+      )
+      (ca cs:"bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-slate-700 transition-colors"
+        (di cs:"h-40 bg-slate-800 rounded-xl flex items-center justify-center text-slate-500 font-semibold" "Developer Kit")
+        (he cs:"text-lg font-bold text-white" "LSP Workstation")
+        (pa cs:"text-sm text-slate-400" "Full language service with diagnostics & formatter.")
+        (di cs:"flex items-center justify-between pt-2"
+          (sp cs:"text-xl font-extrabold text-white" "$199")
+          (bu cs:"px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium text-sm transition-colors" "Add to Cart")
+        )
+      )
+    )
+  )
+)

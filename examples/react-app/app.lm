@@ -1,0 +1,13 @@
+<REACT>
+(component:Counter
+  (state:count 0)
+  (di cs:"p-6 bg-slate-900 border border-slate-800 rounded-xl space-y-4 max-w-sm"
+    (h2 cs:"text-xl font-bold text-cyan-400" "React-LM Counter")
+    (pa cs:"text-slate-300 text-sm" "Current count: {count}")
+    (di cs:"flex gap-2"
+      (bo cs:"px-3 py-1.5 bg-cyan-500 text-black font-semibold rounded-lg text-xs" oc:"count++" "Increment")
+      (bo cs:"px-3 py-1.5 bg-slate-700 text-white rounded-lg text-xs" oc:"count = 0" "Reset")
+    )
+  )
+)
+</REACT>

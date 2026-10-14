@@ -1,0 +1,32 @@
+import { VueProgramNode } from './ast';
+import { VueLMDiagnostic, VueLMInterpreterOptions } from './types';
+export declare class VueLMInterpreter {
+    private program;
+    private currentLoc;
+    private diagnostics;
+    private options;
+    private buffer;
+    private inString;
+    private stringQuote;
+    private inLineComment;
+    private inBlockComment;
+    private escapeNext;
+    constructor(options?: VueLMInterpreterOptions);
+    static parse(source: string, options?: VueLMInterpreterOptions): VueProgramNode;
+    reset(): void;
+    getAST(): VueProgramNode;
+    getDiagnostics(): VueLMDiagnostic[];
+    hasErrors(): boolean;
+    isSafeToExpose(): boolean;
+    write(chunk: string): this;
+    end(): VueProgramNode;
+    private advanceLocation;
+    private consumeChar;
+    private checkBufferForConstructs;
+    private flushBuffer;
+    private parseTokens;
+    private parseProgramAST;
+    private extractMatchingParen;
+    private parseComponentBody;
+    private parsePropsAndChildren;
+}

@@ -1,0 +1,13 @@
+import { ASTNodeKind } from '../../ast/types';
+export declare const SVELTE_ELEMENT_ABBREVIATIONS: Record<string, string>;
+export declare const SVELTE_PROP_ABBREVIATIONS: Record<string, string>;
+export declare const KNOWN_SVELTE_EVENTS: Set<string>;
+export declare const TAG_TO_AST_KIND: Record<string, ASTNodeKind>;
+export declare function resolveSvelteElementTag(identifier: string): string;
+export declare function isIntrinsicTag(name: string): boolean;
+export declare function isCustomComponentName(name: string): boolean;
+export declare function resolveSveltePropName(propName: string): string;
+export declare function isSvelteEventProp(propName: string): boolean;
+export declare function getDOMEventNameFromSvelteEvent(svelteEventName: string): string;
+export declare function isSvelteBindingProp(propName: string): boolean;
+export declare function getBindingPropertyName(propName: string): 'value' | 'checked' | 'group';

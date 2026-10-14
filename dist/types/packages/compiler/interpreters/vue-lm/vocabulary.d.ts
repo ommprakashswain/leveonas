@@ -1,0 +1,13 @@
+import { ASTNodeKind } from '../../ast/types';
+export declare const VUE_ELEMENT_ABBREVIATIONS: Record<string, string>;
+export declare const VUE_PROP_ABBREVIATIONS: Record<string, string>;
+export declare const KNOWN_VUE_EVENTS: Set<string>;
+export declare const TAG_TO_AST_KIND: Record<string, ASTNodeKind>;
+export declare function resolveVueElementTag(identifier: string): string;
+export declare function isIntrinsicTag(name: string): boolean;
+export declare function isCustomComponentName(name: string): boolean;
+export declare function resolveVuePropName(propName: string): string;
+export declare function isVueEventProp(propName: string): boolean;
+export declare function getDOMEventNameFromVueEvent(vueEventName: string): string;
+export declare function isVueModelProp(propName: string): boolean;
+export declare function isVueShowProp(propName: string): boolean;

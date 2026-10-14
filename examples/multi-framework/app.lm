@@ -1,0 +1,20 @@
+;; Multi-Framework Leveonas Specification
+;; Demonstrates unified compilation from React, Vue, Svelte, and Angular into Common UI IR
+
+(lm:react
+  (state frameworkCount: 5)
+  (di cs:"min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 font-sans"
+    (ca cs:"bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-xl w-full space-y-6 shadow-2xl"
+      (he cs:"text-2xl font-bold text-white tracking-tight text-center" "Universal Common UI IR")
+      (pa cs:"text-sm text-slate-400 text-center"
+        "All framework dialects (HTML, React, Vue, Svelte, Angular) compile down to the same language-agnostic Common UI IR."
+      )
+      (di cs:"grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-center text-xs font-semibold"
+        (di cs:"p-3 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-lg" "React-LM")
+        (di cs:"p-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-lg" "Vue-LM")
+        (di cs:"p-3 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-lg" "Svelte-LM")
+        (di cs:"p-3 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg" "Angular-LM")
+      )
+    )
+  )
+)

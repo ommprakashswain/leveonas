@@ -1,0 +1,32 @@
+import { AngularProgramNode } from './ast';
+import { AngularLMDiagnostic, AngularLMInterpreterOptions } from './types';
+export declare class AngularLMInterpreter {
+    private program;
+    private currentLoc;
+    private diagnostics;
+    private options;
+    private buffer;
+    private inString;
+    private stringQuote;
+    private inLineComment;
+    private inBlockComment;
+    private escapeNext;
+    constructor(options?: AngularLMInterpreterOptions);
+    static parse(source: string, options?: AngularLMInterpreterOptions): AngularProgramNode;
+    reset(): void;
+    getAST(): AngularProgramNode;
+    getDiagnostics(): AngularLMDiagnostic[];
+    hasErrors(): boolean;
+    isSafeToExpose(): boolean;
+    write(chunk: string): this;
+    end(): AngularProgramNode;
+    private advanceLocation;
+    private consumeChar;
+    private checkBufferForConstructs;
+    private flushBuffer;
+    private parseTokens;
+    private extractMatchingParen;
+    private parseProgramAST;
+    private parseComponentBody;
+    private parsePropsAndChildren;
+}

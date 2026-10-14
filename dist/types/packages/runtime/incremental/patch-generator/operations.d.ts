@@ -1,0 +1,54 @@
+import { PatchOperation, PatchOperationType } from './types';
+export declare function createOperation(operation: PatchOperationType, nodeId: string, parentId?: string, index?: number, payload?: any, timestamp?: number): PatchOperation;
+export declare function attachTransportTimestamp(op: PatchOperation, timestamp?: number): PatchOperation;
+export declare function createNode(nodeId: string, parentId?: string, index?: number, payload?: any): PatchOperation;
+export declare function insertChild(nodeId: string, parentId: string, index: number, payload: any): PatchOperation;
+export declare function insertNode(nodeId: string, parentId: string, index: number, payload: any): PatchOperation;
+export declare function removeChild(nodeId: string, parentId?: string, index?: number): PatchOperation;
+export declare function removeNode(nodeId: string, parentId?: string, index?: number): PatchOperation;
+export declare function moveChild(nodeId: string, parentId: string, newIndex: number, oldIndex?: number): PatchOperation;
+export declare function moveNode(nodeId: string, parentId: string, newIndex: number, oldIndex?: number): PatchOperation;
+export declare function replaceNode(nodeId: string, parentId: string, index: number, payload: any): PatchOperation;
+export declare function updateText(nodeId: string, text: string): PatchOperation;
+export declare function setAttribute(nodeId: string, name: string, value: any): PatchOperation;
+export declare function removeAttribute(nodeId: string, name: string): PatchOperation;
+export declare function updateProperty(nodeId: string, name: string, value: any): PatchOperation;
+export declare function removeProperty(nodeId: string, name: string): PatchOperation;
+export declare function addProperty(nodeId: string, name: string, value: any): PatchOperation;
+export declare function replaceChildren(nodeId: string, payload: any): PatchOperation;
+export declare function noOp(nodeId: string): PatchOperation;
+export declare function setCSSStyleSheet(nodeId: string, cssText: string): PatchOperation;
+export declare function createCSSRule(nodeId: string, selector: string, declarations?: Array<{
+    property: string;
+    value: string;
+    important?: boolean;
+}>, mediaQuery?: string, index?: number): PatchOperation;
+export declare function removeCSSRule(nodeId: string, selector?: string): PatchOperation;
+export declare function updateCSSRule(nodeId: string, selector: string, declarations: Array<{
+    property: string;
+    value: string;
+    important?: boolean;
+}>, mediaQuery?: string): PatchOperation;
+export declare function addCSSDeclaration(nodeId: string, property: string, value: string, important?: boolean): PatchOperation;
+export declare function updateCSSDeclaration(nodeId: string, property: string, value: string, important?: boolean): PatchOperation;
+export declare function removeCSSDeclaration(nodeId: string, property: string): PatchOperation;
+export declare function updateCSSSelector(nodeId: string, oldSelector: string, newSelector: string): PatchOperation;
+export declare function addCSSKeyframe(nodeId: string, keyframesName: string, keyframeSelector: string, declarations: Array<{
+    property: string;
+    value: string;
+    important?: boolean;
+}>): PatchOperation;
+export declare function removeCSSKeyframe(nodeId: string, keyframesName: string, keyframeSelector: string): PatchOperation;
+export declare function updateCSSKeyframe(nodeId: string, keyframesName: string, keyframeSelector: string, declarations: Array<{
+    property: string;
+    value: string;
+    important?: boolean;
+}>): PatchOperation;
+export declare function createJSUnit(nodeId: string, unitKind: string, code: string, meta?: any, index?: number): PatchOperation;
+export declare function updateJSUnit(nodeId: string, unitKind: string, code: string, meta?: any): PatchOperation;
+export declare function removeJSUnit(nodeId: string): PatchOperation;
+export declare function attachEventHandler(nodeId: string, eventName: string, targetSelector: string, handlerCode: string, index?: number): PatchOperation;
+export declare function updateEventHandler(nodeId: string, eventName: string, targetSelector: string, handlerCode: string): PatchOperation;
+export declare function removeEventHandler(nodeId: string, eventName: string, targetSelector: string): PatchOperation;
+export declare function executeJSUnit(nodeId: string, code: string): PatchOperation;
+export declare function cleanupJSSession(): PatchOperation;

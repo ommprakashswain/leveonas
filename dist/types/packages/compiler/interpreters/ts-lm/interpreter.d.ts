@@ -1,0 +1,36 @@
+import { TSProgramNode } from './ast';
+import { TSLMDiagnostic, TSLMInterpreterOptions } from './types';
+export declare class TSLMInterpreter {
+    private program;
+    private currentLoc;
+    private diagnostics;
+    private options;
+    private buffer;
+    private inLineComment;
+    private inBlockComment;
+    private inString;
+    private stringQuote;
+    private inTemplateLiteral;
+    private templateBraceDepth;
+    private escapeNext;
+    private parenDepth;
+    private braceDepth;
+    private bracketDepth;
+    private genericDepth;
+    private currentUnitText;
+    private currentUnitStartLoc;
+    constructor(options?: TSLMInterpreterOptions);
+    static parse(source: string, options?: TSLMInterpreterOptions): TSProgramNode;
+    reset(): void;
+    getAST(): TSProgramNode;
+    getDiagnostics(): TSLMDiagnostic[];
+    hasErrors(): boolean;
+    isSafeToExpose(): boolean;
+    write(chunk: string): this;
+    end(): TSProgramNode;
+    private advanceLocation;
+    private consumeChar;
+    private commitUnit;
+    private flushCurrentUnit;
+    private analyzeUnit;
+}

@@ -1,0 +1,35 @@
+import { SessionConfig, SessionMetrics } from './types';
+import { StreamController } from './stream';
+import { SessionEvent } from './events';
+import { PatchOperation } from '../incremental/patch-generator/types';
+export declare class StreamingSession {
+    config: SessionConfig;
+    private stateMachine;
+    private scheduler;
+    private heartbeat;
+    private cleanup;
+    private metrics;
+    private streamController;
+    private timeoutTimer;
+    onEvent?: (event: SessionEvent) => void;
+    constructor(config: SessionConfig);
+    attachStream(controller: StreamController): void;
+    enqueuePatch(patch: PatchOperation, immediate?: boolean): void;
+    private flushPatches;
+    private emitHeartbeat;
+    pause(): void;
+    resume(): void;
+    complete(usage?: any): void;
+    cancel(): void;
+    destroy(): void;
+    schedulePatch(patch: PatchOperation, immediate?: boolean): void;
+    fail(error: any): void;
+    private handleDisconnect;
+    private resetTimeout;
+    private clearTimeout;
+    private handleTimeout;
+    private emitEvent;
+    getId(): string;
+    getState(): import("./types").SessionState;
+    getMetrics(): SessionMetrics;
+}

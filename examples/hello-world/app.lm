@@ -1,0 +1,7 @@
+(di cs:"min-h-screen bg-slate-950 text-white flex flex-col items-center justify-center p-6 font-sans"
+  (ca cs:"bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-sm w-full text-center shadow-xl space-y-4"
+    (he cs:"text-2xl font-bold tracking-tight text-white" "Hello, Leveonas!")
+    (pa cs:"text-sm text-slate-400" "A minimal streaming user interface running on sub-millisecond DOM patches.")
+    (bu cs:"w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 font-medium text-white rounded-lg transition-colors" "Explore More")
+  )
+)

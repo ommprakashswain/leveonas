@@ -1,0 +1,36 @@
+import { ReactProgramNode } from './ast';
+import { ReactLMDiagnostic, ReactLMInterpreterOptions } from './types';
+export declare class ReactLMInterpreter {
+    private program;
+    private currentLoc;
+    private diagnostics;
+    private options;
+    private buffer;
+    private inString;
+    private stringQuote;
+    private inLineComment;
+    private inBlockComment;
+    private escapeNext;
+    private stack;
+    private parenDepth;
+    private currentToken;
+    private currentTokenStartLoc;
+    constructor(options?: ReactLMInterpreterOptions);
+    static parse(source: string, options?: ReactLMInterpreterOptions): ReactProgramNode;
+    reset(): void;
+    getAST(): ReactProgramNode;
+    getDiagnostics(): ReactLMDiagnostic[];
+    hasErrors(): boolean;
+    isSafeToExpose(): boolean;
+    write(chunk: string): this;
+    end(): ReactProgramNode;
+    private advanceLocation;
+    private consumeChar;
+    private checkBufferForConstructs;
+    private flushBuffer;
+    private parseTokens;
+    private parseProgramAST;
+    private extractMatchingParen;
+    private parseComponentBody;
+    private parsePropsAndChildren;
+}

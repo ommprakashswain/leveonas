@@ -1,0 +1,14 @@
+<ANGULAR>
+(component:AngularSignals
+  (signal:quantity 1)
+  (computed:subtotal quantity * 15)
+  (di cs:"p-6 bg-slate-900 border border-slate-800 rounded-xl space-y-4 max-w-sm"
+    (h2 cs:"text-xl font-bold text-rose-400" "Angular-LM Signals")
+    (pa cs:"text-slate-300 text-sm" "Quantity: {quantity} | Subtotal: ${subtotal}")
+    (di cs:"flex gap-2"
+      (bo cs:"px-3 py-1.5 bg-rose-500 text-white font-semibold rounded-lg text-xs" oc:"quantity++" "Add Item")
+      (bo cs:"px-3 py-1.5 bg-slate-700 text-white rounded-lg text-xs" oc:"quantity = Math.max(1, quantity - 1)" "Remove Item")
+    )
+  )
+)
+</ANGULAR>

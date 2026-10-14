@@ -1,0 +1,11 @@
+<SVELTE>
+component(SvelteCounter)(
+  state(count, 0)
+  reactive(double, count * 2)
+  di(cs:"p-6 bg-slate-900 border border-slate-800 rounded-xl space-y-4 max-w-sm"
+    h2(cs:"text-xl font-bold text-orange-400" "Svelte-LM Counter")
+    pa(cs:"text-slate-300 text-sm" "Count: {count}, Double: {double}")
+    bo(cs:"px-3 py-1.5 bg-orange-500 text-black font-semibold rounded-lg text-xs" click:increment "+1")
+  )
+)
+</SVELTE>

@@ -1,0 +1,26 @@
+(lm:react
+  (state items: ["Setup Leveonas runtime", "Verify sandboxed iframe isolation", "Benchmark streaming patches"] newText: "")
+  (di cs:"min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 font-sans"
+    (ca cs:"bg-slate-900 border border-slate-800 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-6"
+      (he cs:"text-2xl font-bold tracking-tight text-white" "Task Master")
+      (di cs:"flex space-x-2"
+        (iu cs:"flex-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500" pl:"Enter a new task...")
+        (bu cs:"px-4 py-2 bg-indigo-600 hover:bg-indigo-500 font-semibold text-white rounded-lg transition-colors" "Add")
+      )
+      (di cs:"space-y-3"
+        (di cs:"p-3 bg-slate-800/60 border border-slate-700/50 rounded-lg flex items-center justify-between"
+          (sp cs:"text-sm text-slate-200" "Setup Leveonas runtime")
+          (sp cs:"text-xs text-emerald-400 font-semibold" "DONE")
+        )
+        (di cs:"p-3 bg-slate-800/60 border border-slate-700/50 rounded-lg flex items-center justify-between"
+          (sp cs:"text-sm text-slate-200" "Verify sandboxed iframe isolation")
+          (sp cs:"text-xs text-emerald-400 font-semibold" "DONE")
+        )
+        (di cs:"p-3 bg-slate-800/60 border border-slate-700/50 rounded-lg flex items-center justify-between"
+          (sp cs:"text-sm text-slate-200" "Benchmark streaming patches")
+          (sp cs:"text-xs text-amber-400 font-semibold" "IN PROGRESS")
+        )
+      )
+    )
+  )
+)

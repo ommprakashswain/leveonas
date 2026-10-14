@@ -1,0 +1,25 @@
+(di cs:"min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans"
+  (na cs:"w-full border-b border-slate-800/80 px-6 py-4 flex items-center justify-between backdrop-blur-md sticky top-0 z-50 bg-slate-950/80"
+    (di cs:"flex items-center space-x-2"
+      (sp cs:"font-bold text-xl text-white tracking-tight" "Leveonas")
+    )
+    (di cs:"flex items-center space-x-6 text-sm text-slate-400"
+      (sp cs:"hover:text-white cursor-pointer" "Features")
+      (sp cs:"hover:text-white cursor-pointer" "Architecture")
+      (sp cs:"hover:text-white cursor-pointer" "Benchmarks")
+      (bu cs:"px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors" "Get Started")
+    )
+  )
+  (di cs:"flex-1 flex flex-col items-center justify-center text-center px-4 py-20 max-w-4xl mx-auto space-y-6"
+    (he cs:"text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight"
+      "Live Streaming AI Interfaces at Microsecond Latency"
+    )
+    (pa cs:"text-lg md:text-xl text-slate-400 max-w-2xl"
+      "Renders AI-generated frontend trees incrementally with sub-millisecond DOM patches while the model is still generating."
+    )
+    (di cs:"flex items-center space-x-4 pt-4"
+      (bu cs:"px-6 py-3 bg-indigo-600 hover:bg-indigo-500 font-semibold text-white rounded-xl shadow-lg transition-colors" "Read Documentation")
+      (bu cs:"px-6 py-3 bg-slate-800 hover:bg-slate-700 font-semibold text-slate-200 rounded-xl transition-colors" "View Benchmarks")
+    )
+  )
+)

@@ -1,0 +1,22 @@
+(lm:svelte
+  (state activeUsers: 48 ping: 12 status: "OPERATIONAL")
+  (di cs:"min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 font-sans"
+    (ca cs:"bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-lg w-full space-y-6 shadow-2xl"
+      (di cs:"flex items-center justify-between"
+        (he cs:"text-xl font-bold text-white tracking-tight" "Real-Time Telemetry")
+        (sp cs:"text-xs px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full font-semibold" status)
+      )
+      (di cs:"grid grid-cols-2 gap-4"
+        (di cs:"p-4 bg-slate-800/50 border border-slate-700/40 rounded-xl text-center space-y-1"
+          (pa cs:"text-xs text-slate-400 font-medium" "Active Connections")
+          (he cs:"text-2xl font-extrabold text-white" activeUsers)
+        )
+        (di cs:"p-4 bg-slate-800/50 border border-slate-700/40 rounded-xl text-center space-y-1"
+          (pa cs:"text-xs text-slate-400 font-medium" "Latency Roundtrip")
+          (he cs:"text-2xl font-extrabold text-indigo-400" ping " ms")
+        )
+      )
+      (pa cs:"text-xs text-slate-500 text-center" "Updates streamed incrementally via Server-Sent Events (SSE).")
+    )
+  )
+)
